@@ -13,7 +13,7 @@ PERSONAL:
 EDUCATION:
 - Master of Engineering Management (MEM) — Duke University, started August 2026, expected May 2028 (currently enrolled)
 - Coursework: AI Product Management, Finance, Marketing, Design Thinking & Innovation
-- Activities: Women in Tech, Product Management Club, Teaching Assistant
+- Activities: Product Management Club, Duke Advanced Degree Consulting Club, Women in Tech, MEM Social Media Engagement Team
 - B.Tech, Computer Science — Bennett University, GPA 8.57/10, graduated June 2023
 - Certifications: AWS Academy Graduate, Microsoft Azure Administrator Associate, Hello PM AI Product Management
 
@@ -22,19 +22,23 @@ CAREER GOAL:
 - Summer 2027 internship window aligned with MEM program
 
 EXPERIENCE:
-1. Founding Product Engineer — Edpi Innovate (July 2025 – June 2026, Noida, India)
+1. Product Strategy Consultant — Duke Health (Aug 2026 – Present, Durham, NC)
+   - Assessed the commercialization opportunity for a resorbable surgical mesh, benchmarking 4-5 competing products and evaluating unmet needs across 4 stakeholder groups to inform go-to-market priorities
+   - Turned discovery interviews with surgeons, anesthesiologists and other stakeholders into 5-8 prioritized product requirements and a validation roadmap for an early-stage medical device venture
+
+2. Founding Product Engineer — Edpi Innovate (July 2025 – June 2026, Noida, India)
    - Joined as founding team member building an all-in-one school ERP
    - Conducted competitive analysis across fee management, attendance, and governance modules
    - Shipped conversational AI chatbot and global search for Institutional Governance System
    - Identified onboarding friction via stakeholder interviews, shipped voice-to-chat integration
 
-2. UI Developer — SpiceJet Limited (July 2024 – July 2025, Gurugram, India)
+3. UI Developer — SpiceJet Limited (July 2024 – July 2025, Gurugram, India)
    - Owned product roadmap for Flebo, healthcare platform with 120+ lab partners, 6000+ pincodes
    - Led AI Reports feature from concept to launch — ML-driven health insights and personalized recommendations
    - Reduced booking drop-off with automated reminder UX
    - Resolved critical payment/wallet bugs prioritized by user-impact severity
 
-3. Software Engineer / Product Engineering Intern — Rapipay Fintech (Jan 2023 – Apr 2024, Noida, India)
+4. Software Engineer / Product Engineering Intern — Rapipay Fintech (Jan 2023 – Apr 2024, Noida, India)
    - Built shared React component library across 10+ apps, cutting dev time by 20%
    - Shipped Mutual Funds platform contributing to 10% user growth in 6 months
    - Reduced system downtime by 30%, created 15+ components for SDUI framework
@@ -56,13 +60,13 @@ PROJECTS:
    - Built Institutional Governance System with AI chatbot and global search
    - Reduced admin effort through voice-to-chat and interactive data tables
 
-4. Ask-Data Trust Layer (personal prototype, Nov 2026)
+4. Ask-Data Trust Layer (personal prototype, Aug–Oct 2026; PRD and product teardown PDFs on the project page)
    - Trust-first natural-language-to-SQL prototype on a synthetic warehouse
    - Governed semantic model, database-level policy guard (read-only, table allow-list, PII blocked), graceful abstention
    - Eval harness of 38 questions: silent-error rate 79% -> 5% and execution accuracy 17% -> 97% vs a naive baseline, 0% over-refusal
    - Honest caveat: small author-written eval set, so the numbers validate the harness rather than claim a benchmark
 
-5. Phishing Triage Assistant (personal prototype, Nov 2026)
+5. Phishing Triage Assistant (personal prototype, Nov 2026; PRD PDF on the project page)
    - Explainable "report this email" assistant: verdict, reasons, real link destinations, and a short lesson
    - Never reassures without evidence; messages are analysed in memory and never stored
    - Eval on 44 messages: missed-threat rate 43.5% -> 8.7% vs a keyword baseline, 0% false alarms
@@ -102,11 +106,11 @@ export async function POST(req: NextRequest) {
       } else if (lastMessage.includes("intern") || lastMessage.includes("target") || lastMessage.includes("looking")) {
         reply = "Shrayanshi is targeting Product Management, AI PM, and Technical Program Management internships at big tech companies (Google, Meta, Amazon, Microsoft, Apple) for Summer 2027, aligned with her MEM program at Duke. She brings 3 years of engineering + product experience and has shipped AI features at scale.";
       } else if (lastMessage.includes("background") || lastMessage.includes("experience") || lastMessage.includes("sde") || lastMessage.includes("engineer")) {
-        reply = "Shrayanshi has 3+ years of experience as a software engineer. At SpiceJet she owned the product roadmap for Flebo (120+ lab partners), at Edpi Innovate she was a founding product engineer shipping AI features, and at Rapipay she built a Micro Frontend Architecture reducing dev time by 20%. Now pursuing Duke MEM to formally transition to PM.";
+        reply = "Shrayanshi has 3+ years of experience as a software engineer. She's currently a Product Strategy Consultant at Duke Health, working on a medical device venture. At SpiceJet she owned the product roadmap for Flebo (120+ lab partners), at Edpi Innovate she was a founding product engineer shipping AI features, and at Rapipay she built a Micro Frontend Architecture reducing dev time by 20%. Now pursuing Duke MEM to formally transition to PM.";
       } else if (lastMessage.includes("skill") || lastMessage.includes("tech")) {
         reply = "Shrayanshi's PM skills include: Roadmapping, PRD writing, User Research, A/B Testing, OKRs, Agile/Scrum, Stakeholder Management. Technical: React/Next.js, TypeScript, Python, LLM Integration, RAG, Prompt Engineering. Tools: Figma, Jira, Claude Code, Cursor, Tableau, AWS.";
       } else if (lastMessage.includes("duke") || lastMessage.includes("mem") || lastMessage.includes("education")) {
-        reply = "Shrayanshi is in Duke's Master of Engineering Management (MEM) program, which she started in August 2026 (expected May 2028). Her coursework covers AI Product Management, Finance, Marketing, and Design Thinking, and she's involved with Women in Tech and the Product Management Club.";
+        reply = "Shrayanshi is in Duke's Master of Engineering Management (MEM) program, which she started in August 2026 (expected May 2028). Her coursework covers AI Product Management, Finance, Marketing, and Design Thinking, and she's involved with the Product Management Club, Duke Advanced Degree Consulting Club and Women in Tech.";
       }
 
       return NextResponse.json({ reply });

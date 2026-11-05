@@ -21,6 +21,18 @@ export const stats = [
 
 export const experiences = [
   {
+    company: "Duke Health",
+    role: "Product Strategy Consultant",
+    type: "Consulting",
+    period: "Aug 2026 – Present",
+    location: "Durham, NC",
+    color: "#0ea5e9",
+    highlights: [
+      "Assessed the commercialization opportunity for a resorbable surgical mesh by benchmarking 4–5 competing products and evaluating unmet needs across 4 stakeholder groups, informing go-to-market priorities.",
+      "Translated discovery interviews with surgeons, anesthesiologists, and other stakeholders into 5–8 prioritized product requirements and a validation roadmap for an early-stage medical device venture.",
+    ],
+  },
+  {
     company: "Edpi Innovate",
     role: "Founding Product Engineer",
     type: "Full-time",
@@ -70,7 +82,7 @@ export const education = [
     location: "Durham, NC",
     details: "In progress",
     courses: ["AI Product Management", "Finance", "Marketing", "Design Thinking & Innovation"],
-    clubs: ["Women in Tech", "Product Management Club", "Teaching Assistant"],
+    clubs: ["Product Management Club", "Duke Advanced Degree Consulting Club", "Women in Tech", "MEM Social Media Engagement Team"],
     color: "#003087",
   },
   {
@@ -221,9 +233,23 @@ export const projects = [
     tagline: "Natural-language analytics that refuses to guess",
     description:
       "A trust-first \"talk to your warehouse\" prototype. Built a governed semantic model, a database-level policy guard, and an evaluation harness that measures silent errors, not just accuracy — cutting confident wrong answers from 79% to 5% versus a naive baseline.",
-    period: "Nov 2026",
+    period: "Aug – Oct 2026",
     status: "Prototype",
     tags: ["AI PM", "Data / Analytics", "Evaluation", "Governance"],
+    documents: [
+      {
+        title: "Product Teardown",
+        description: "How natural-language analytics will be won on trust: 3 vendors compared, 3 ranked product proposals, and the prototype as evidence.",
+        file: "/docs/ask-data-teardown.pdf",
+        pages: 5,
+      },
+      {
+        title: "PRD",
+        description: "Problem, users, principles, success metrics, scope, known failures, risks and rollout.",
+        file: "/docs/ask-data-prd.pdf",
+        pages: 2,
+      },
+    ],
     color: "#0ea5e9",
     gradient: "from-sky-400 to-blue-600",
     metrics: [
@@ -267,6 +293,14 @@ export const projects = [
     period: "Nov 2026",
     status: "Prototype",
     tags: ["AI Safety", "Security UX", "Evaluation", "Explainability"],
+    documents: [
+      {
+        title: "PRD",
+        description: "Problem, users, principles, success metrics, scope, known failures, risks and rollout.",
+        file: "/docs/phishing-prd.pdf",
+        pages: 2,
+      },
+    ],
     color: "#f43f5e",
     gradient: "from-rose-500 to-pink-600",
     metrics: [
