@@ -8,33 +8,37 @@ PERSONAL:
 - Full name: Shrayanshi Tomar
 - Email: shrayanshi.tomar@gmail.com
 - LinkedIn: linkedin.com/in/shrayanshi-tomar
-- Currently in India, moving to Durham, NC in August 2026
+- Based in Durham, NC (moved from India in August 2026 for the Duke MEM program)
 
 EDUCATION:
-- Master of Engineering Management (MEM) — Duke University, starting August 2026, expected May 2028
+- Master of Engineering Management (MEM) — Duke University, started August 2026, expected May 2028 (currently enrolled)
 - Coursework: AI Product Management, Finance, Marketing, Design Thinking & Innovation
-- Activities: Women in Tech, Product Management Club, Teaching Assistant
+- Activities: Product Management Club, Duke Advanced Degree Consulting Club, Women in Tech, MEM Social Media Engagement Team
 - B.Tech, Computer Science — Bennett University, GPA 8.57/10, graduated June 2023
 - Certifications: AWS Academy Graduate, Microsoft Azure Administrator Associate, Hello PM AI Product Management
 
 CAREER GOAL:
 - Targeting Product Management, AI PM, and Technical Program Management internships at big tech companies (Google, Meta, Amazon, Microsoft, Apple, etc.)
-- Summer/Fall 2026 internship window aligned with MEM program
+- Summer 2027 internship window aligned with MEM program
 
 EXPERIENCE:
-1. Founding Product Engineer — Edpi Innovate (July 2025 – June 2026, Noida, India)
+1. Product Strategy Consultant — Duke Health (Aug 2026 – Present, Durham, NC)
+   - Assessed the commercialization opportunity for a resorbable surgical mesh, benchmarking 4-5 competing products and evaluating unmet needs across 4 stakeholder groups to inform go-to-market priorities
+   - Turned discovery interviews with surgeons, anesthesiologists and other stakeholders into 5-8 prioritized product requirements and a validation roadmap for an early-stage medical device venture
+
+2. Founding Product Engineer — Edpi Innovate (July 2025 – June 2026, Noida, India)
    - Joined as founding team member building an all-in-one school ERP
    - Conducted competitive analysis across fee management, attendance, and governance modules
    - Shipped conversational AI chatbot and global search for Institutional Governance System
    - Identified onboarding friction via stakeholder interviews, shipped voice-to-chat integration
 
-2. UI Developer — SpiceJet Limited (July 2024 – July 2025, Gurugram, India)
+3. UI Developer — SpiceJet Limited (July 2024 – July 2025, Gurugram, India)
    - Owned product roadmap for Flebo, healthcare platform with 120+ lab partners, 6000+ pincodes
    - Led AI Reports feature from concept to launch — ML-driven health insights and personalized recommendations
    - Reduced booking drop-off with automated reminder UX
    - Resolved critical payment/wallet bugs prioritized by user-impact severity
 
-3. Software Engineer / Product Engineering Intern — Rapipay Fintech (Jan 2023 – Apr 2024, Noida, India)
+4. Software Engineer / Product Engineering Intern — Rapipay Fintech (Jan 2023 – Apr 2024, Noida, India)
    - Built shared React component library across 10+ apps, cutting dev time by 20%
    - Shipped Mutual Funds platform contributing to 10% user growth in 6 months
    - Reduced system downtime by 30%, created 15+ components for SDUI framework
@@ -56,9 +60,20 @@ PROJECTS:
    - Built Institutional Governance System with AI chatbot and global search
    - Reduced admin effort through voice-to-chat and interactive data tables
 
+4. Ask-Data Trust Layer (personal prototype, Aug–Oct 2026; PRD and product teardown PDFs on the project page)
+   - Trust-first natural-language-to-SQL prototype on a synthetic warehouse
+   - Governed semantic model, database-level policy guard (read-only, table allow-list, PII blocked), graceful abstention
+   - Eval harness of 38 questions: silent-error rate 79% -> 5% and execution accuracy 17% -> 97% vs a naive baseline, 0% over-refusal
+   - Honest caveat: small author-written eval set, so the numbers validate the harness rather than claim a benchmark
+
+5. Phishing Triage Assistant (personal prototype, Nov 2026; PRD PDF on the project page)
+   - Explainable "report this email" assistant: verdict, reasons, real link destinations, and a short lesson
+   - Never reassures without evidence; messages are analysed in memory and never stored
+   - Eval on 44 messages: missed-threat rate 43.5% -> 8.7% vs a keyword baseline, 0% false alarms
+
 SKILLS:
 - Product: Roadmapping, PRD Development, User Stories, Competitive Analysis, A/B Testing, OKRs, Agile/Scrum, Stakeholder Management, GTM Strategy
-- AI & Technical: LLM Integration, AI Product Design, Prompt Engineering, RAG, React/Next.js, TypeScript, Python, SQL, REST APIs
+- AI & Technical: LLM Integration, AI Product Design, Prompt Engineering, RAG, LLM Evaluation, React/Next.js, TypeScript, Python, SQL, REST APIs
 - Tools: Figma, Jira, Confluence, Notion, Claude Code, Cursor, n8n, Zapier, Tableau, AWS
 
 WHY PM?
@@ -84,18 +99,18 @@ export async function POST(req: NextRequest) {
     if (!apiKey) {
       // Fallback responses when no API key is set
       const lastMessage = messages[messages.length - 1]?.content?.toLowerCase() || "";
-      let reply = "I'm Shrayanshi's AI companion! She's a software engineer transitioning to Product Management, joining Duke's MEM program in August 2026. She's targeting PM, AI PM, and TPM internships at big tech. Feel free to ask me anything, or reach out to her directly at shrayanshi.tomar@gmail.com!";
+      let reply = "I'm Shrayanshi's AI companion! She's a software engineer transitioning to Product Management, now in Duke's MEM program (Class of 2028). She's targeting PM, AI PM, and TPM internships at big tech. Feel free to ask me anything, or reach out to her directly at shrayanshi.tomar@gmail.com!";
 
       if (lastMessage.includes("project") || lastMessage.includes("work")) {
-        reply = "Shrayanshi has shipped 3 notable products: 1) AI Question Builder — adopted by 4 schools for AI-powered assessment generation; 2) Flebo AI Reports — ML-driven health insights for SpiceJet's healthcare platform serving 6000+ pincodes; 3) School ERP IGS — institutional governance system with AI chatbot. Click any project card to see the full PRD and case study!";
+        reply = "Shrayanshi has shipped 3 notable products: 1) AI Question Builder — adopted by 4 schools for AI-powered assessment generation; 2) Flebo AI Reports — ML-driven health insights for SpiceJet's healthcare platform serving 6000+ pincodes; 3) School ERP IGS — institutional governance system with AI chatbot. She's also built two AI-trust prototypes: Ask-Data, a natural-language analytics tool that refuses to guess, and a Phishing Triage Assistant that explains its verdicts. Click any project card to see the full PRD and case study!";
       } else if (lastMessage.includes("intern") || lastMessage.includes("target") || lastMessage.includes("looking")) {
-        reply = "Shrayanshi is targeting Product Management, AI PM, and Technical Program Management internships at big tech companies (Google, Meta, Amazon, Microsoft, Apple) for Summer/Fall 2026, aligned with her MEM program at Duke. She brings 3 years of engineering + product experience and has shipped AI features at scale.";
+        reply = "Shrayanshi is targeting Product Management, AI PM, and Technical Program Management internships at big tech companies (Google, Meta, Amazon, Microsoft, Apple) for Summer 2027, aligned with her MEM program at Duke. She brings 3 years of engineering + product experience and has shipped AI features at scale.";
       } else if (lastMessage.includes("background") || lastMessage.includes("experience") || lastMessage.includes("sde") || lastMessage.includes("engineer")) {
-        reply = "Shrayanshi has 3+ years of experience as a software engineer. At SpiceJet she owned the product roadmap for Flebo (120+ lab partners), at Edpi Innovate she was a founding product engineer shipping AI features, and at Rapipay she built a Micro Frontend Architecture reducing dev time by 20%. Now pursuing Duke MEM to formally transition to PM.";
+        reply = "Shrayanshi has 3+ years of experience as a software engineer. She's currently a Product Strategy Consultant at Duke Health, working on a medical device venture. At SpiceJet she owned the product roadmap for Flebo (120+ lab partners), at Edpi Innovate she was a founding product engineer shipping AI features, and at Rapipay she built a Micro Frontend Architecture reducing dev time by 20%. Now pursuing Duke MEM to formally transition to PM.";
       } else if (lastMessage.includes("skill") || lastMessage.includes("tech")) {
         reply = "Shrayanshi's PM skills include: Roadmapping, PRD writing, User Research, A/B Testing, OKRs, Agile/Scrum, Stakeholder Management. Technical: React/Next.js, TypeScript, Python, LLM Integration, RAG, Prompt Engineering. Tools: Figma, Jira, Claude Code, Cursor, Tableau, AWS.";
       } else if (lastMessage.includes("duke") || lastMessage.includes("mem") || lastMessage.includes("education")) {
-        reply = "Shrayanshi starts Duke's Master of Engineering Management (MEM) in August 2026. She'll study AI Product Management, Finance, Marketing, and Design Thinking. She plans to join Women in Tech and the Product Management Club, and serve as a Teaching Assistant.";
+        reply = "Shrayanshi is in Duke's Master of Engineering Management (MEM) program, which she started in August 2026 (expected May 2028). Her coursework covers AI Product Management, Finance, Marketing, and Design Thinking, and she's involved with the Product Management Club, Duke Advanced Degree Consulting Club and Women in Tech.";
       }
 
       return NextResponse.json({ reply });
@@ -106,7 +121,7 @@ export async function POST(req: NextRequest) {
     const client = new Anthropic({ apiKey });
 
     const response = await client.messages.create({
-      model: "claude-3-5-haiku-20241022",
+      model: "claude-haiku-5-5",
       max_tokens: 300,
       system: SYSTEM_PROMPT,
       messages: messages.map((m: { role: string; content: string }) => ({

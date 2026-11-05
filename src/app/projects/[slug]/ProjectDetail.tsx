@@ -1,14 +1,17 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import {
   ArrowLeft, Clock, Tag, Target, Users, Lightbulb,
-  CheckCircle2, Layers, TrendingUp, ExternalLink, Wrench
+  CheckCircle2, Layers, TrendingUp, ExternalLink, Wrench,
+  FileText, Download
 } from "lucide-react";
 import { projects } from "@/data/portfolio";
 
-type Project = (typeof projects)[0];
+type Project = (typeof projects)[number];
+type ProjectDocument = { title: string; description: string; file: string; pages: number };
 
 export default function ProjectDetail({ project }: { project: Project }) {
   const { prd } = project;
@@ -108,6 +111,11 @@ export default function ProjectDetail({ project }: { project: Project }) {
             </div>
           ))}
         </motion.div>
+
+        {/* Documents (PRDs, teardowns) */}
+        {"documents" in project && project.documents && project.documents.length > 0 && (
+          <DocumentViewer documents={project.documents} color={project.color} />
+        )}
 
         {/* PRD Sections */}
         <div className="space-y-6">
@@ -275,6 +283,101 @@ export default function ProjectDetail({ project }: { project: Project }) {
         </motion.div>
       </div>
     </div>
+  );
+}
+
+function DocumentViewer({ documents, color }: { documents: ProjectDocument[]; color: string }) {
+  const [active, setActive] = useState(0);
+  const doc = documents[active];
+
+  return (
+    <motion.section
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.18 }}
+      className="glass rounded-2xl border border-white/[0.06] p-5 sm:p-6 mb-6 overflow-hidden"
+      aria-label="Project documents"
+    >
+      <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+        <div className="flex items-center gap-2">
+          <div
+            className="w-7 h-7 rounded-lg flex items-center justify-center"
+            style={{ background: `${color}20`, color }}
+          >
+            <FileText className="w-4 h-4" />
+          </div>
+          <h2 className="text-sm font-bold text-white uppercase tracking-wider">Documents</h2>
+        </div>
+
+        {documents.length > 1 && (
+          <div role="tablist" className="flex gap-1 p-1 rounded-xl bg-white/[0.04] border border-white/[0.06]">
+            {documents.map((d, i) => (
+              <button
+                key={d.file}
+                role="tab"
+                aria-selected={i === active}
+                onClick={() => setActive(i)}
+                className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
+                  i === active ? "text-white" : "text-white/50 hover:text-white/80"
+                }`}
+                style={i === active ? { background: `${color}30` } : undefined}
+              >
+                {d.title}
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+
+      <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
+        <div className="min-w-0 flex-1">
+          <p className="text-base font-semibold text-white">
+            {doc.title}
+            <span className="ml-2 text-xs font-normal text-white/40">PDF · {doc.pages} pages</span>
+          </p>
+          <p className="text-sm text-white/50 mt-0.5">{doc.description}</p>
+        </div>
+        <div className="flex gap-2 shrink-0">
+          <a
+            href={doc.file}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-white/80 glass border border-white/10 hover:text-white hover:border-white/20 transition-colors"
+          >
+            <ExternalLink className="w-3.5 h-3.5" />
+            Open
+          </a>
+          <a
+            href={doc.file}
+            download
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-white transition-transform hover:scale-105"
+            style={{ background: `linear-gradient(135deg, ${color}, ${color}aa)` }}
+          >
+            <Download className="w-3.5 h-3.5" />
+            Download
+          </a>
+        </div>
+      </div>
+
+      {/* Inline viewer on larger screens; mobile browsers often can't embed PDFs */}
+      <div className="hidden sm:block rounded-xl overflow-hidden border border-white/[0.08] bg-white">
+        <iframe
+          key={doc.file}
+          src={`${doc.file}#view=FitH`}
+          title={`${doc.title} (PDF)`}
+          className="w-full h-[75vh] min-h-[520px]"
+        />
+      </div>
+      <a
+        href={doc.file}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="sm:hidden flex items-center justify-center gap-2 py-8 rounded-xl border border-dashed border-white/15 text-sm font-semibold text-white/70"
+      >
+        <FileText className="w-5 h-5" style={{ color }} />
+        Open the {doc.title} PDF
+      </a>
+    </motion.section>
   );
 }
 

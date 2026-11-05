@@ -160,7 +160,7 @@ export default function Hero() {
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 mb-8"
         >
           <Sparkles className="w-3 h-3" />
-          <span>MEM @ Duke University · Starting Aug 2026</span>
+          <span>MEM @ Duke University · Class of 2028</span>
         </motion.div>
 
         {/* Name */}

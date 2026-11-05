@@ -63,7 +63,7 @@ export default function Contact() {
             Let&apos;s <span className="gradient-text">build together</span>
           </h2>
           <p className="text-white/40 text-base max-w-lg mx-auto leading-relaxed">
-            I&apos;m actively looking for PM, AI PM, and TPM internships at big tech for Summer/Fall 2026. If you&apos;re working on something exciting — let&apos;s talk.
+            I&apos;m actively looking for PM, AI PM, and TPM internships at big tech for Summer 2027. If you&apos;re working on something exciting — let&apos;s talk.
           </p>
         </motion.div>
 
@@ -79,7 +79,7 @@ export default function Contact() {
               <GraduationCap className="w-5 h-5 text-indigo-400" />
             </div>
             <div>
-              <p className="text-sm font-semibold text-white">Duke MEM · Starting Aug 2026</p>
+              <p className="text-sm font-semibold text-white">Duke MEM · Class of 2028</p>
               <p className="text-xs text-white/40">Master of Engineering Management</p>
             </div>
           </div>
@@ -88,7 +88,7 @@ export default function Contact() {
               <MapPin className="w-5 h-5 text-emerald-400" />
             </div>
             <div>
-              <p className="text-sm font-semibold text-white">Durham, NC (from Aug 2026)</p>
+              <p className="text-sm font-semibold text-white">Durham, NC</p>
               <p className="text-xs text-white/40">Open to remote & relocation</p>
             </div>
           </div>

@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Shrayanshi Tomar | PM & AI Enthusiast",
   description:
-    "Product Manager & AI Enthusiast. MEM @ Duke University starting Aug 2026. Ex-SpiceJet, Rapipay. Building AI-native products.",
+    "Product Manager & AI Enthusiast. MEM candidate @ Duke University. Ex-SpiceJet, Rapipay. Building AI-native products.",
   keywords: ["Product Manager", "AI PM", "Duke MEM", "Technical Program Manager", "Shrayanshi Tomar"],
   openGraph: {
     title: "Shrayanshi Tomar | PM & AI Enthusiast",

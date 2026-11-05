@@ -83,8 +83,8 @@ export default function Impact() {
         >
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-0 sm:divide-x divide-white/[0.06]">
             {[
-              { label: "Companies", value: "3", sub: "SpiceJet · Rapipay · Edpi" },
-              { label: "Education", value: "Duke MEM", sub: "Starting Aug 2026" },
+              { label: "Companies", value: "4", sub: "Duke Health · SpiceJet · Rapipay · Edpi" },
+              { label: "Education", value: "Duke MEM", sub: "Class of 2028" },
               { label: "Certifications", value: "5+", sub: "AWS · Azure · AI PM" },
             ].map((item) => (
               <div key={item.label} className="text-center sm:px-6">

@@ -6,8 +6,8 @@ export const personalInfo = {
   email: "shrayanshi.tomar@gmail.com",
   linkedin: "https://linkedin.com/in/shrayanshi-tomar",
   phone: "+91-7017744354",
-  location: "Durham, NC (starting Aug 2026)",
-  bio: "Software engineer turned product manager, joining Duke's MEM program this August. I've shipped AI features, led cross-functional teams, and obsess over the intersection of great UX and business impact. I'm targeting PM, AI PM, and TPM internships at big tech companies.",
+  location: "Durham, NC",
+  bio: "Software engineer turned product manager, now in Duke's MEM program. I've shipped AI features, led cross-functional teams, and obsess over the intersection of great UX and business impact. I'm targeting PM, AI PM, and TPM internships at big tech companies for Summer 2027.",
 };
 
 export const stats = [
@@ -20,6 +20,18 @@ export const stats = [
 ];
 
 export const experiences = [
+  {
+    company: "Duke Health",
+    role: "Product Strategy Consultant",
+    type: "Consulting",
+    period: "Aug 2026 – Present",
+    location: "Durham, NC",
+    color: "#0ea5e9",
+    highlights: [
+      "Assessed the commercialization opportunity for a resorbable surgical mesh by benchmarking 4–5 competing products and evaluating unmet needs across 4 stakeholder groups, informing go-to-market priorities.",
+      "Translated discovery interviews with surgeons, anesthesiologists, and other stakeholders into 5–8 prioritized product requirements and a validation roadmap for an early-stage medical device venture.",
+    ],
+  },
   {
     company: "Edpi Innovate",
     role: "Founding Product Engineer",
@@ -66,11 +78,11 @@ export const education = [
   {
     school: "Duke University",
     degree: "Master of Engineering Management (MEM)",
-    period: "Expected May 2028",
+    period: "Aug 2026 – May 2028 (expected)",
     location: "Durham, NC",
-    details: "Starting August 2026",
+    details: "In progress",
     courses: ["AI Product Management", "Finance", "Marketing", "Design Thinking & Innovation"],
-    clubs: ["Women in Tech", "Product Management Club", "Teaching Assistant"],
+    clubs: ["Product Management Club", "Duke Advanced Degree Consulting Club", "Women in Tech", "MEM Social Media Engagement Team"],
     color: "#003087",
   },
   {
@@ -215,6 +227,114 @@ export const projects = [
         "Shipped AI chatbot and global search on schedule as a founding team member. Voice-to-chat integration reduced manual administrator effort. Competitive analysis translated directly into roadmap differentiation for the early-stage product.",
     },
   },
+  {
+    slug: "ask-data-trust-layer",
+    title: "Ask-Data Trust Layer",
+    tagline: "Natural-language analytics that refuses to guess",
+    description:
+      "A trust-first \"talk to your warehouse\" prototype. Built a governed semantic model, a database-level policy guard, and an evaluation harness that measures silent errors, not just accuracy — cutting confident wrong answers from 79% to 5% versus a naive baseline.",
+    period: "Aug – Oct 2026",
+    status: "Prototype",
+    tags: ["AI PM", "Data / Analytics", "Evaluation", "Governance"],
+    documents: [
+      {
+        title: "Product Teardown",
+        description: "How natural-language analytics will be won on trust: 3 vendors compared, 3 ranked product proposals, and the prototype as evidence.",
+        file: "/docs/ask-data-teardown.pdf",
+        pages: 5,
+      },
+      {
+        title: "PRD",
+        description: "Problem, users, principles, success metrics, scope, known failures, risks and rollout.",
+        file: "/docs/ask-data-prd.pdf",
+        pages: 2,
+      },
+    ],
+    color: "#0ea5e9",
+    gradient: "from-sky-400 to-blue-600",
+    metrics: [
+      { value: "79→5%", label: "Silent-Error Rate" },
+      { value: "97%", label: "Exec. Accuracy" },
+      { value: "0%", label: "Over-refusal" },
+    ],
+    tools: ["Python", "SQLite", "SQL", "Claude API", "HTML / JS"],
+    prd: {
+      problem:
+        "Business users have questions that live in the data warehouse but depend on an analyst to write SQL. Natural-language-to-SQL demos look magical, but adoption stalls on one failure: a confident wrong answer. One wrong number in a QBR and users stop asking.",
+      users: [
+        { persona: "Business Analysts / RevOps", pain: "Waiting on analysts; inconsistent metric definitions across teams" },
+        { persona: "Data Governance Owners", pain: "Fear of ungoverned AI access exposing PII or inventing metrics" },
+        { persona: "Data Engineers", pain: "Acting as the human SQL API for ad hoc requests" },
+      ],
+      solution:
+        "A semantic layer that resolves business terms to governed definitions and shows its assumptions, an engine that abstains on PII, writes, causal questions and undefined metrics, and policy enforced in the database authorizer so any engine — rules or LLM — inherits it.",
+      goals: [
+        "Make silent-error rate the north-star metric, tracked alongside accuracy",
+        "Keep over-refusal at 0% so safety doesn't cost usefulness",
+        "Gate release on silent-error rate below 2% on a customer's own eval set",
+      ],
+      features: [
+        { name: "Semantic Model", description: "Governed metrics, dimensions and synonyms; every answer states the definition it used" },
+        { name: "Policy Guard", description: "Read-only access, table allow-list, and PII columns blocked even through SELECT *" },
+        { name: "Graceful Abstention", description: "Explains why it won't answer instead of guessing" },
+        { name: "Eval Harness", description: "38 hand-written questions with independent gold SQL, scored on result-set match" },
+        { name: "Scorecard UI", description: "Task success, silent errors, over-refusal and latency, with the SQL behind every answer" },
+      ],
+      outcomes:
+        "Versus a keyword baseline: silent-error rate 79% → 5%, execution accuracy 17% → 97%, with 0% over-refusal. The eval set is small and author-written, so these numbers validate the harness rather than claim a benchmark; the two remaining failures (ratio metrics, trend questions) are next on the roadmap.",
+    },
+  },
+  {
+    slug: "phishing-triage-assistant",
+    title: "Phishing Triage Assistant",
+    tagline: "Turning every \"report phishing\" click into a lesson",
+    description:
+      "A deployable prototype of a \"report this email\" feature for security awareness. Users paste a suspicious message and get a verdict, the specific reasons, where each link really goes, and a short lesson — and it never reassures without evidence.",
+    period: "Nov 2026",
+    status: "Prototype",
+    tags: ["AI Safety", "Security UX", "Evaluation", "Explainability"],
+    documents: [
+      {
+        title: "PRD",
+        description: "Problem, users, principles, success metrics, scope, known failures, risks and rollout.",
+        file: "/docs/phishing-prd.pdf",
+        pages: 2,
+      },
+    ],
+    color: "#f43f5e",
+    gradient: "from-rose-500 to-pink-600",
+    metrics: [
+      { value: "43→9%", label: "Missed Threats" },
+      { value: "91%", label: "Threats Flagged" },
+      { value: "0%", label: "False Alarms" },
+    ],
+    tools: ["Python", "Docker", "Render", "HTML / JS"],
+    prd: {
+      problem:
+        "Employees who report suspicious emails rarely learn anything from it, and simple filters either miss look-alike threats or falsely reassure. A tool that says \"looks fine\" without evidence trains people to trust the wrong messages.",
+      users: [
+        { persona: "Employees", pain: "Unsure whether an email is safe and don't know which signs to look for" },
+        { persona: "Security Awareness Teams", pain: "Reports pile up without becoming teaching moments" },
+        { persona: "SOC Analysts", pain: "Triage time spent on reports a clear explanation could resolve" },
+      ],
+      solution:
+        "An explainable triage engine that checks look-alike domains, display-name and reply-to mismatches, deceptive links, risky attachments, urgency and credential requests — returning a three-level verdict with reasons and a plain-language lesson for each sign.",
+      goals: [
+        "Never rate a message safe without evidence; send uncertain cases to review",
+        "Cut missed-threat rate well below a keyword baseline",
+        "Keep false alarms on legitimate mail at 0%",
+      ],
+      features: [
+        { name: "Three-level Verdict", description: "Likely phishing, check before you trust it, or no clear warning signs" },
+        { name: "Link X-ray", description: "Shows where each link really goes versus what its text claims" },
+        { name: "Teach-back Lessons", description: "Every flagged sign comes with what to look for next time" },
+        { name: "Privacy by Design", description: "Messages analysed in memory, never stored; links never fetched; rate-limited" },
+        { name: "Eval Scorecard", description: "44 labelled messages scored against a keyword-only baseline" },
+      ],
+      outcomes:
+        "Missed-threat rate dropped from 43.5% to 8.7% versus a keyword baseline, with 0% false alarms on legitimate mail and every ambiguous message sent to review. Two residual misses (a compromised internal account, pure social engineering) are kept visible to show the limits of content-only rules.",
+    },
+  },
 ];
 
 export const skills = {
@@ -224,7 +344,7 @@ export const skills = {
     "GTM Strategy", "Design Thinking", "User Research", "Feature Prioritization",
   ],
   aiTechnical: [
-    "LLM Integration", "AI Product Design", "Prompt Engineering", "RAG",
+    "LLM Integration", "AI Product Design", "Prompt Engineering", "RAG", "LLM Evaluation",
     "React / Next.js", "TypeScript", "Python", "SQL", "REST APIs",
     "FastAPI", "Redux", "Docker",
   ],

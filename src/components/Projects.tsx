@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ArrowRight, ExternalLink, Tag, Clock, CheckCircle2 } from "lucide-react";
+import { ArrowRight, ExternalLink, Tag, Clock, CheckCircle2, FileText } from "lucide-react";
 import Link from "next/link";
 import { projects } from "@/data/portfolio";
 
@@ -124,10 +124,17 @@ export default function Projects() {
 
                     {/* CTA */}
                     <div className="flex items-center justify-between pt-4 border-t border-white/[0.06]">
-                      <span className="text-xs text-white/40 flex items-center gap-1">
-                        <CheckCircle2 className="w-3 h-3 text-emerald-500" />
-                        View PRD & Case Study
-                      </span>
+                      {"documents" in project && project.documents && project.documents.length > 0 ? (
+                        <span className="text-xs text-white/60 flex items-center gap-1">
+                          <FileText className="w-3 h-3" style={{ color: project.color }} />
+                          {project.documents.map((d) => d.title).join(" + ")} (PDF)
+                        </span>
+                      ) : (
+                        <span className="text-xs text-white/40 flex items-center gap-1">
+                          <CheckCircle2 className="w-3 h-3 text-emerald-500" />
+                          View PRD & Case Study
+                        </span>
+                      )}
                       <motion.div
                         className="flex items-center gap-1 text-xs font-semibold text-indigo-400 group-hover:text-indigo-300"
                         whileHover={{ x: 4 }}
